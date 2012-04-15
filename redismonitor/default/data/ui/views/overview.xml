@@ -1,0 +1,46 @@
+<form class="formsearch">
+  <label>Host overview</label>
+
+  <fieldset>
+    <input type="dropdown" token="host" searchWhenChanged="false">
+      <populatingSearch fieldForValue="value" fieldForLabel="label">| metadata type=hosts index=redis | eval label=host | eval value=host</populatingSearch>
+    </input>
+    <input type="time" searchWhenChanged="false"/>
+  </fieldset>
+
+  <row>
+    <single>
+      <searchTemplate>`uptime_days_by_host($host$)`</searchTemplate>
+      <title>Uptime in Days</title>
+      <option name="field">uptime</option>
+      <option name="classField">range</option>
+    </single>
+    <single>
+      <searchTemplate>`uptime_secs_by_host($host$)`</searchTemplate>
+      <title>Uptime in Seconds</title>
+      <option name="field">uptime</option>
+      <option name="classField">range</option>
+    </single>
+  </row>
+  <row>
+    <chart>
+    	<title>Clients Connected</title>
+    	<searchTemplate>`clients_connected($host$)`</searchTemplate>
+    	<option name="charting.chart">line</option>
+	<option name="charting.chart.nullValueMode">connect</option>
+    	<option name="charting.primaryAxisTitle.text">Time</option>
+    	<option name="charting.secondaryAxisTitle.text">Clients Connected</option>
+	<option name="charting.legend.labelStyle.maximumWidth">500</option>
+    </chart>
+    <chart>
+    	<title>Memory Usage</title>
+    	<searchTemplate>`memory_used($host$)`</searchTemplate>
+    	<option name="charting.chart">line</option>
+	<option name="charting.chart.nullValueMode">connect</option>
+    	<option name="charting.primaryAxisTitle.text">Time</option>
+    	<option name="charting.secondaryAxisTitle.text">Memory Used(KB)</option>
+	<option name="charting.legend.labelStyle.maximumWidth">500</option>
+    </chart>
+  </row>
+</form>
+

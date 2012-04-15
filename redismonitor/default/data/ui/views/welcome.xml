@@ -1,0 +1,21 @@
+<view isVisible="true" objectMode="SimpleDashboard" onunloadCancelJobs="true" refresh="-1" template="dashboard.html">
+  <label>Introduction</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">splunk.search.job</param>
+    <param name="clearOnJobDispatch">True</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TitleBar" layoutPanel="viewHeader">
+    <param name="actionsMenuFilter">dashboard</param>
+  </module>
+  <module name="ServerSideInclude" layoutPanel="panel_row2_col1">
+    <param name="src">intro.html</param>
+  </module>
+</view>

@@ -1,0 +1,7 @@
+[script://./bin/redis-info.rb]
+disabled = 0
+interval = 30
+host = redis01
+source = redis-cli
+sourcetype = redis-info
+index = redis

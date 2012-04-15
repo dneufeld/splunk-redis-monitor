@@ -1,0 +1,5 @@
+<nav>
+  <view name="welcome"/>
+  <view name="flashtimeline"/>
+  <view name="overview"/>
+</nav>
