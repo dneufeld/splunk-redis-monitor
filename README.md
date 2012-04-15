@@ -6,8 +6,8 @@ app provides the ability to monitor Redis servers.
 ## Usage
 
 ###pre-requisites
-splunk (http://www.splunk.com)
-redis (http://www.redis.io)
+- splunk (http://www.splunk.com)
+- redis (http://www.redis.io)
 
 ````
 cd $SPLUNK_HOME/etc/apps
@@ -23,7 +23,7 @@ servers
 
 ###This applciation has been tested on:
 
--redis 2.4.1
+- redis 2.4.1
 
 ###Data collection script
 
@@ -35,4 +35,4 @@ The data collection script can be found in
 
 To configure your Splunk server you should:
 
--Configure inputs.conf
+- Configure inputs.conf
