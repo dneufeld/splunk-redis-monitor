@@ -5,3 +5,8 @@ host = redis01
 source = redis-cli
 sourcetype = redis-info
 index = redis
+
+[monitor:///var/log/redis.log]
+sourcetype = redis
+disabled = 0
+host = redis01
